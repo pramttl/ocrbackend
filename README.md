@@ -61,3 +61,7 @@ Sample response:
 #### Example 3: via java
 
     #TODO
+
+#### Sample Image
+
+<a href="url"><img src="examples/sample-image.jpg" align="left" height="100" width="200" ></a>
