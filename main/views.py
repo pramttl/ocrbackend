@@ -6,15 +6,22 @@ import json
 # Create your views here.
 
 from django.views.decorators.csrf import csrf_exempt
+from pdir import pdir
+
+import subprocess
 
 @csrf_exempt
 def upload_photo(request):
     if request.method == 'POST':
         image = request.FILES['photo']
 
-        #XXX Now convert image file to OpenCV Image type
-        #image = Image(photo=image,)
-        #image.save()
+        img = Image(photo=image,)
+        img.save()
+        path =  img.photo.path
+
+        cmd = "tesseract " + path + " out && cat out.txt"
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
+        output = p.stdout.read()
 
         #XXX One way is to load file from file system. More efficient would be to directly used the bytes in the memory.
 
@@ -22,5 +29,5 @@ def upload_photo(request):
 
         ocr_text = 'Foo text'
         # Do tesseract OCR here and replace processed text result here.
-        response_data=[{"response": ocr_text}]
+        response_data=[{"response": output}]
         return HttpResponse(json.dumps(response_data), content_type='application/json')

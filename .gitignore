@@ -2,3 +2,6 @@ venv/*
 db.sqlite3
 *.pyc
 .idea/*
+out.txt
+photos/*
+examples/debug.html

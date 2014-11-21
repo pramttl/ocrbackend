@@ -7,8 +7,5 @@ class Image(models.Model):
     uploaded = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
-    class Meta:
-        db_table = 'media_photos'
-
     def __unicode__(self):
-        return '%s' % unicode(self.uploaded)
+        return '%s' % unicode(self.photo)
