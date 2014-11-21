@@ -36,24 +36,28 @@ very easily.
 Sample Input/Output
 -------------------
 
-### Example 1: Via Curl
-
-#### Sample Input via CURL:
+#### Example 1: via curl (on bash CLI)
 
     curl -F "photo=@/path/to/ocrbackend/examples/sample-image.jpg" localhost:8000/
 
-#### Sample Output:
+Sample response:
 
     [{"response": "The quick brown fox\njumped over the 5\nlazy dogs!\n\n"}]
 
 
-#### Example 2: Via Python script
+#### Example 2: via python
 
-Check an example here which uses the `requests` python library.
+    # From inside ocrbackend/examples directory where sample-image.jpg is present
+    url = 'http://localhost:8000'
+    files = {'photo': open('sample-image.jpg', 'rb')}
+    r = requests.post(url, files=files, data={})
+    print r.text
 
-    https://github.com/pramttl/ocrbackend/blob/master/examples/post_test.py
+Sample response:
+
+    [{"response": "The quick brown fox\njumped over the 5\nlazy dogs!\n\n"}]
 
 
-#### Example 3: Via Java
+#### Example 3: via java
 
     #TODO
