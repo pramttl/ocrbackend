@@ -68,3 +68,8 @@ Output Summary
 
 The output is a  JSON which contains the OCRed text for the input file and the amount of time in microseconds
 taken to do the OCR computation.
+
+#### Sample Input Image
+
+<a href="url"><img src="examples/sample-image.jpg" align="left" height="100" width="200" ></a>
+
