@@ -5,3 +5,4 @@ db.sqlite3
 out.txt
 photos/*
 examples/debug.html
+post_test_server.py

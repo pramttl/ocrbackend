@@ -55,9 +55,16 @@ Sample response:
 
 Sample response:
 
-    [{"response": "The quick brown fox\njumped over the 5\nlazy dogs!\n\n"}]
+    [{"response": "The quick brown fox\njumped over the 5\nlazy dogs!\n\n", "ocr_microseconds": 65467}]
 
 
 #### Example 3: via java
 
     #TODO
+
+
+Output Summary
+--------------
+
+The output is a  JSON which contains the OCRed text for the input file and the amount of time in microseconds
+taken to do the OCR computation.
